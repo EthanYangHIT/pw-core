@@ -1,0 +1,12 @@
+import { Signer } from '.';
+import { Keccak256Hasher } from '../hashers';
+export class DefaultSigner extends Signer {
+    constructor(provider) {
+        super(new Keccak256Hasher());
+        this.provider = provider;
+    }
+    async signMessages(messages) {
+        return [await this.provider.sign(messages[0].message)];
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGVmYXVsdC1zaWduZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvc2lnbmVycy9kZWZhdWx0LXNpZ25lci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsTUFBTSxFQUFXLE1BQU0sR0FBRyxDQUFDO0FBQ3BDLE9BQU8sRUFBRSxlQUFlLEVBQUUsTUFBTSxZQUFZLENBQUM7QUFHN0MsTUFBTSxPQUFPLGFBQWMsU0FBUSxNQUFNO0lBQ3ZDLFlBQTRCLFFBQWtCO1FBQzVDLEtBQUssQ0FBQyxJQUFJLGVBQWUsRUFBRSxDQUFDLENBQUM7UUFESCxhQUFRLEdBQVIsUUFBUSxDQUFVO0lBRTlDLENBQUM7SUFFRCxLQUFLLENBQUMsWUFBWSxDQUFDLFFBQW1CO1FBQ3BDLE9BQU8sQ0FBQyxNQUFNLElBQUksQ0FBQyxRQUFRLENBQUMsSUFBSSxDQUFDLFFBQVEsQ0FBQyxDQUFDLENBQUMsQ0FBQyxPQUFPLENBQUMsQ0FBQyxDQUFDO0lBQ3pELENBQUM7Q0FDRiJ9

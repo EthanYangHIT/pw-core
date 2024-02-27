@@ -1,0 +1,70 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CHAIN_SPECS = exports.DUMMY_ADDRESSES = exports.DAO_WITHDRAW_2_WITNESS_LEN = exports.ECDSA_WITNESS_LEN = void 0;
+const interfaces_1 = require("./interfaces");
+const models_1 = require("./models");
+exports.ECDSA_WITNESS_LEN = 172;
+exports.DAO_WITHDRAW_2_WITNESS_LEN = 196;
+exports.DUMMY_ADDRESSES = {
+    main: 'ckb1qyqy5vmywpty6p72wpvm0xqys8pdtxqf6cmsr8p2l0',
+    ckb_testnet: 'ckt1qyqwknsshmvnj8tj6wnaua53adc0f8jtrrzqz4xcu2',
+    ckb_dev: 'ckt1qyqwknsshmvnj8tj6wnaua53adc0f8jtrrzqz4xcu2',
+};
+exports.CHAIN_SPECS = {
+    Lina: {
+        daoType: {
+            cellDep: new models_1.CellDep(interfaces_1.DepType.code, new models_1.OutPoint('0xe2fb199810d49a4d8beec56718ba2593b665db9d52299a0f9e6e75416d73ff5c', '0x2')),
+            script: new models_1.Script('0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e', '0x', interfaces_1.HashType.type),
+        },
+        defaultLock: {
+            cellDep: new models_1.CellDep(interfaces_1.DepType.depGroup, new models_1.OutPoint('0x71a7ba8fc96349fea0ed3a5c47992e3b4084b031a42264a018e0072e8172e46c', '0x0')),
+            script: new models_1.Script('0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8', '0x', interfaces_1.HashType.type),
+        },
+        multiSigLock: {
+            cellDep: new models_1.CellDep(interfaces_1.DepType.depGroup, new models_1.OutPoint('0x71a7ba8fc96349fea0ed3a5c47992e3b4084b031a42264a018e0072e8172e46c', '0x1')),
+            script: new models_1.Script('0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8', '0x', interfaces_1.HashType.type),
+        },
+        pwLock: {
+            cellDep: new models_1.CellDep(interfaces_1.DepType.code, new models_1.OutPoint('0x1d60cb8f4666e039f418ea94730b1a8c5aa0bf2f7781474406387462924d15d4', '0x0')),
+            script: new models_1.Script('0xbf43c3602455798c1a61a596e0d95278864c552fafe231c063b3fabf97a8febc', '0x', interfaces_1.HashType.type),
+        },
+    },
+    Aggron: {
+        daoType: {
+            cellDep: new models_1.CellDep(interfaces_1.DepType.code, new models_1.OutPoint('0x8f8c79eb6671709633fe6a46de93c0fedc9c1b8a6527a18d3983879542635c9f', '0x2')),
+            script: new models_1.Script('0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e', '0x', interfaces_1.HashType.type),
+        },
+        defaultLock: {
+            cellDep: new models_1.CellDep(interfaces_1.DepType.depGroup, new models_1.OutPoint('0xf8de3bb47d055cdf460d93a2a6e1b05f7432f9777c8c474abf4eec1d4aee5d37', '0x0')),
+            script: new models_1.Script('0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8', '0x', interfaces_1.HashType.type),
+        },
+        multiSigLock: {
+            cellDep: new models_1.CellDep(interfaces_1.DepType.depGroup, new models_1.OutPoint('0x6495cede8d500e4309218ae50bbcadb8f722f24cc7572dd2274f5876cb603e4e', '0x1')),
+            script: new models_1.Script('0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8', '0x', interfaces_1.HashType.type),
+        },
+        pwLock: {
+            cellDep: new models_1.CellDep(interfaces_1.DepType.code, new models_1.OutPoint('0x57a62003daeab9d54aa29b944fc3b451213a5ebdf2e232216a3cfed0dde61b38', '0x0')),
+            script: new models_1.Script('0x58c5f491aba6d61678b7cf7edf4910b1f5e00ec0cde2f42e0abb4fd9aff25a63', '0x', interfaces_1.HashType.type),
+        },
+    },
+    // dev - lay2.ckb.dev
+    Lay2: {
+        daoType: {
+            cellDep: new models_1.CellDep(interfaces_1.DepType.code, new models_1.OutPoint('0xa563884b3686078ec7e7677a5f86449b15cf2693f3c1241766c6996f206cc541', '0x2')),
+            script: new models_1.Script('0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e', '0x', interfaces_1.HashType.type),
+        },
+        defaultLock: {
+            cellDep: new models_1.CellDep(interfaces_1.DepType.depGroup, new models_1.OutPoint('0xace5ea83c478bb866edf122ff862085789158f5cbff155b7bb5f13058555b708', '0x0')),
+            script: new models_1.Script('0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8', '0x', interfaces_1.HashType.type),
+        },
+        multiSigLock: {
+            cellDep: new models_1.CellDep(interfaces_1.DepType.depGroup, new models_1.OutPoint('0xace5ea83c478bb866edf122ff862085789158f5cbff155b7bb5f13058555b708', '0x1')),
+            script: new models_1.Script('0x5c5069eb0857efc65e1bca0c07df34c31663b3622fd3876c876320fc9634e2a8', '0x', interfaces_1.HashType.type),
+        },
+        pwLock: {
+            cellDep: new models_1.CellDep(interfaces_1.DepType.code, new models_1.OutPoint('0x7822910729c566c0f8a3f4bb9aee721c5da2808f9a4688e909c0119b0ab820d7', '0x0')),
+            script: new models_1.Script('0xc9eb3097397836e4d5b8fabed3c0cddd14fefe483caf238ca2e3095a111add0b', '0x', interfaces_1.HashType.type),
+        },
+    },
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29uc3RhbnRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3JjL2NvbnN0YW50cy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSw2Q0FBaUQ7QUFDakQscUNBQXFEO0FBRXhDLFFBQUEsaUJBQWlCLEdBQUcsR0FBRyxDQUFDO0FBQ3hCLFFBQUEsMEJBQTBCLEdBQUcsR0FBRyxDQUFDO0FBRWpDLFFBQUEsZUFBZSxHQUFHO0lBQzdCLElBQUksRUFBRSxnREFBZ0Q7SUFDdEQsV0FBVyxFQUFFLGdEQUFnRDtJQUM3RCxPQUFPLEVBQUUsZ0RBQWdEO0NBQzFELENBQUM7QUFFVyxRQUFBLFdBQVcsR0FBRztJQUN6QixJQUFJLEVBQUU7UUFDSixPQUFPLEVBQUU7WUFDUCxPQUFPLEVBQUUsSUFBSSxnQkFBTyxDQUNsQixvQkFBTyxDQUFDLElBQUksRUFDWixJQUFJLGlCQUFRLENBQ1Ysb0VBQW9FLEVBQ3BFLEtBQUssQ0FDTixDQUNGO1lBQ0QsTUFBTSxFQUFFLElBQUksZUFBTSxDQUNoQixvRUFBb0UsRUFDcEUsSUFBSSxFQUNKLHFCQUFRLENBQUMsSUFBSSxDQUNkO1NBQ0Y7UUFDRCxXQUFXLEVBQUU7WUFDWCxPQUFPLEVBQUUsSUFBSSxnQkFBTyxDQUNsQixvQkFBTyxDQUFDLFFBQVEsRUFDaEIsSUFBSSxpQkFBUSxDQUNWLG9FQUFvRSxFQUNwRSxLQUFLLENBQ04sQ0FDRjtZQUNELE1BQU0sRUFBRSxJQUFJLGVBQU0sQ0FDaEIsb0VBQW9FLEVBQ3BFLElBQUksRUFDSixxQkFBUSxDQUFDLElBQUksQ0FDZDtTQUNGO1FBQ0QsWUFBWSxFQUFFO1lBQ1osT0FBTyxFQUFFLElBQUksZ0JBQU8sQ0FDbEIsb0JBQU8sQ0FBQyxRQUFRLEVBQ2hCLElBQUksaUJBQVEsQ0FDVixvRUFBb0UsRUFDcEUsS0FBSyxDQUNOLENBQ0Y7WUFDRCxNQUFNLEVBQUUsSUFBSSxlQUFNLENBQ2hCLG9FQUFvRSxFQUNwRSxJQUFJLEVBQ0oscUJBQVEs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
